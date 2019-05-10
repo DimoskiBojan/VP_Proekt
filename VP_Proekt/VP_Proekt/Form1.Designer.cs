@@ -327,6 +327,7 @@
             this.btnProstorna.TabIndex = 3;
             this.btnProstorna.Text = "Просторна ориентација";
             this.btnProstorna.UseVisualStyleBackColor = true;
+            this.btnProstorna.Click += new System.EventHandler(this.btnProstorna_Click);
             // 
             // Form1
             // 

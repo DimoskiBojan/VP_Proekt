@@ -28,5 +28,16 @@ namespace VP_Proekt
                 this.Show();
             }
         }
+
+        private void btnProstorna_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Prostorna prostorna = new Prostorna();
+            DialogResult result = prostorna.ShowDialog();
+            if (result == DialogResult.Cancel)
+            {
+                this.Show();
+            }
+        }
     }
 }
