@@ -12,9 +12,21 @@ namespace VP_Proekt
 {
     public partial class Form1 : Form
     {
+ 
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnUlica_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Ulica ulica = new Ulica();
+            DialogResult result = ulica.ShowDialog();
+            if (result == DialogResult.Cancel)
+            {
+                this.Show();
+            }
         }
     }
 }
