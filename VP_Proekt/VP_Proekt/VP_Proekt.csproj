@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DodadiStavka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodadiStavka.Designer.cs">
+      <DependentUpon>DodadiStavka.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,12 +66,16 @@
     <Compile Include="Prostorna.Designer.cs">
       <DependentUpon>Prostorna.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stavka.cs" />
     <Compile Include="Ulica.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ulica.Designer.cs">
       <DependentUpon>Ulica.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DodadiStavka.resx">
+      <DependentUpon>DodadiStavka.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

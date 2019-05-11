@@ -34,16 +34,19 @@
             this.lbLeft = new System.Windows.Forms.ListBox();
             this.lbRight = new System.Windows.Forms.ListBox();
             this.btnMoveLeft = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDodadi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbPogodeniLeft = new System.Windows.Forms.TextBox();
+            this.btnIzbrishi = new System.Windows.Forms.Button();
+            this.tbPogodeniRight = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblLeft = new System.Windows.Forms.Label();
+            this.lblRight = new System.Windows.Forms.Label();
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.pbPogodeni = new System.Windows.Forms.ProgressBar();
+            this.btnMoveBackRight = new System.Windows.Forms.Button();
+            this.btnMoveBackLeft = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMoveRight
@@ -54,12 +57,14 @@
             this.btnMoveRight.TabIndex = 1;
             this.btnMoveRight.Text = ">>";
             this.btnMoveRight.UseVisualStyleBackColor = true;
+            this.btnMoveRight.Click += new System.EventHandler(this.btnMoveRight_Click);
             // 
             // lbPrimary
             // 
             this.lbPrimary.FormattingEnabled = true;
             this.lbPrimary.Location = new System.Drawing.Point(291, 38);
             this.lbPrimary.Name = "lbPrimary";
+            this.lbPrimary.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lbPrimary.Size = new System.Drawing.Size(218, 355);
             this.lbPrimary.TabIndex = 2;
             // 
@@ -87,15 +92,17 @@
             this.btnMoveLeft.TabIndex = 5;
             this.btnMoveLeft.Text = "<<";
             this.btnMoveLeft.UseVisualStyleBackColor = true;
+            this.btnMoveLeft.Click += new System.EventHandler(this.btnMoveLeft_Click);
             // 
-            // button1
+            // btnDodadi
             // 
-            this.button1.Location = new System.Drawing.Point(291, 404);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(218, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Додади ставка";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDodadi.Location = new System.Drawing.Point(291, 404);
+            this.btnDodadi.Name = "btnDodadi";
+            this.btnDodadi.Size = new System.Drawing.Size(218, 23);
+            this.btnDodadi.TabIndex = 6;
+            this.btnDodadi.Text = "Додади ставка";
+            this.btnDodadi.UseVisualStyleBackColor = true;
+            this.btnDodadi.Click += new System.EventHandler(this.btnDodadi_Click);
             // 
             // label1
             // 
@@ -106,32 +113,33 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Погодени: ";
             // 
-            // textBox1
+            // tbPogodeniLeft
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(81, 411);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(84, 20);
-            this.textBox1.TabIndex = 8;
+            this.tbPogodeniLeft.Enabled = false;
+            this.tbPogodeniLeft.Location = new System.Drawing.Point(81, 411);
+            this.tbPogodeniLeft.Name = "tbPogodeniLeft";
+            this.tbPogodeniLeft.ReadOnly = true;
+            this.tbPogodeniLeft.Size = new System.Drawing.Size(84, 20);
+            this.tbPogodeniLeft.TabIndex = 8;
             // 
-            // button2
+            // btnIzbrishi
             // 
-            this.button2.Location = new System.Drawing.Point(291, 433);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(218, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Избриши ставка";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnIzbrishi.Location = new System.Drawing.Point(291, 433);
+            this.btnIzbrishi.Name = "btnIzbrishi";
+            this.btnIzbrishi.Size = new System.Drawing.Size(218, 23);
+            this.btnIzbrishi.TabIndex = 11;
+            this.btnIzbrishi.Text = "Избриши ставка";
+            this.btnIzbrishi.UseVisualStyleBackColor = true;
+            this.btnIzbrishi.Click += new System.EventHandler(this.btnIzbrishi_Click);
             // 
-            // textBox2
+            // tbPogodeniRight
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(705, 415);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(84, 20);
-            this.textBox2.TabIndex = 13;
+            this.tbPogodeniRight.Enabled = false;
+            this.tbPogodeniRight.Location = new System.Drawing.Point(705, 415);
+            this.tbPogodeniRight.Name = "tbPogodeniRight";
+            this.tbPogodeniRight.ReadOnly = true;
+            this.tbPogodeniRight.Size = new System.Drawing.Size(84, 20);
+            this.tbPogodeniRight.TabIndex = 13;
             // 
             // label2
             // 
@@ -142,47 +150,82 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Погодени: ";
             // 
-            // label3
+            // timer1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "label3";
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label4
+            // lblLeft
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(567, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "label4";
+            this.lblLeft.AutoSize = true;
+            this.lblLeft.Location = new System.Drawing.Point(12, 13);
+            this.lblLeft.Name = "lblLeft";
+            this.lblLeft.Size = new System.Drawing.Size(35, 13);
+            this.lblLeft.TabIndex = 14;
+            this.lblLeft.Text = "label3";
             // 
-            // label5
+            // lblRight
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(373, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "label5";
+            this.lblRight.AutoSize = true;
+            this.lblRight.Location = new System.Drawing.Point(567, 13);
+            this.lblRight.Name = "lblRight";
+            this.lblRight.Size = new System.Drawing.Size(35, 13);
+            this.lblRight.TabIndex = 15;
+            this.lblRight.Text = "label4";
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.Location = new System.Drawing.Point(375, 13);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(34, 13);
+            this.lblTimer.TabIndex = 16;
+            this.lblTimer.Text = "00:00";
+            // 
+            // pbPogodeni
+            // 
+            this.pbPogodeni.Location = new System.Drawing.Point(12, 462);
+            this.pbPogodeni.Name = "pbPogodeni";
+            this.pbPogodeni.Size = new System.Drawing.Size(776, 23);
+            this.pbPogodeni.TabIndex = 17;
+            // 
+            // btnMoveBackRight
+            // 
+            this.btnMoveBackRight.Location = new System.Drawing.Point(245, 240);
+            this.btnMoveBackRight.Name = "btnMoveBackRight";
+            this.btnMoveBackRight.Size = new System.Drawing.Size(40, 30);
+            this.btnMoveBackRight.TabIndex = 18;
+            this.btnMoveBackRight.Text = ">>";
+            this.btnMoveBackRight.UseVisualStyleBackColor = true;
+            this.btnMoveBackRight.Click += new System.EventHandler(this.btnMoveBackRight_Click);
+            // 
+            // btnMoveBackLeft
+            // 
+            this.btnMoveBackLeft.Location = new System.Drawing.Point(515, 240);
+            this.btnMoveBackLeft.Name = "btnMoveBackLeft";
+            this.btnMoveBackLeft.Size = new System.Drawing.Size(40, 30);
+            this.btnMoveBackLeft.TabIndex = 19;
+            this.btnMoveBackLeft.Text = "<<";
+            this.btnMoveBackLeft.UseVisualStyleBackColor = true;
+            this.btnMoveBackLeft.Click += new System.EventHandler(this.btnMoveBackLeft_Click);
             // 
             // Prostorna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 460);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(800, 493);
+            this.Controls.Add(this.btnMoveBackLeft);
+            this.Controls.Add(this.btnMoveBackRight);
+            this.Controls.Add(this.pbPogodeni);
+            this.Controls.Add(this.lblTimer);
+            this.Controls.Add(this.lblRight);
+            this.Controls.Add(this.lblLeft);
+            this.Controls.Add(this.tbPogodeniRight);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnIzbrishi);
+            this.Controls.Add(this.tbPogodeniLeft);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDodadi);
             this.Controls.Add(this.btnMoveLeft);
             this.Controls.Add(this.lbRight);
             this.Controls.Add(this.lbLeft);
@@ -202,15 +245,18 @@
         private System.Windows.Forms.ListBox lbLeft;
         private System.Windows.Forms.ListBox lbRight;
         private System.Windows.Forms.Button btnMoveLeft;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDodadi;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbPogodeniLeft;
+        private System.Windows.Forms.Button btnIzbrishi;
+        private System.Windows.Forms.TextBox tbPogodeniRight;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblLeft;
+        private System.Windows.Forms.Label lblRight;
+        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.ProgressBar pbPogodeni;
+        private System.Windows.Forms.Button btnMoveBackRight;
+        private System.Windows.Forms.Button btnMoveBackLeft;
     }
 }
