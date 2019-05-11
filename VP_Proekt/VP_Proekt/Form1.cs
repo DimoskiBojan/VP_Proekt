@@ -20,23 +20,37 @@ namespace VP_Proekt
 
         private void btnUlica_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Ulica ulica = new Ulica();
-            DialogResult result = ulica.ShowDialog();
-            if (result == DialogResult.Cancel)
+            var confirmResult = MessageBox.Show("Помини ја улицата на пешачкиот премин. Внимавај на светлото на семафорот!",
+                                     "Почни нова игра",
+                                     MessageBoxButtons.OKCancel);
+            if (confirmResult == DialogResult.OK)
             {
-                this.Show();
+                this.Hide();
+                Ulica ulica = new Ulica();
+                DialogResult result = ulica.ShowDialog();
+                if (result == DialogResult.Cancel)
+                {
+                    this.Show();
+                }
             }
+            
+            
         }
 
         private void btnProstorna_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Prostorna prostorna = new Prostorna();
-            DialogResult result = prostorna.ShowDialog();
-            if (result == DialogResult.Cancel)
+            var confirmResult = MessageBox.Show("Премести ги овошјата и зеленчуците од листата во средина во соодветните листи според насловот.",
+                                     "Почни нова игра",
+                                     MessageBoxButtons.OKCancel);
+            if (confirmResult == DialogResult.OK)
             {
-                this.Show();
+                this.Hide();
+                Prostorna prostorna = new Prostorna();
+                DialogResult result = prostorna.ShowDialog();
+                if (result == DialogResult.Cancel)
+                {
+                    this.Show();
+                }
             }
         }
     }
