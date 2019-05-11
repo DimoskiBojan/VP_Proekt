@@ -47,6 +47,7 @@
             this.pbPogodeni = new System.Windows.Forms.ProgressBar();
             this.btnMoveBackRight = new System.Windows.Forms.Button();
             this.btnMoveBackLeft = new System.Windows.Forms.Button();
+            this.btnNewGame = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMoveRight
@@ -61,27 +62,33 @@
             // 
             // lbPrimary
             // 
+            this.lbPrimary.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrimary.FormattingEnabled = true;
-            this.lbPrimary.Location = new System.Drawing.Point(291, 38);
+            this.lbPrimary.ItemHeight = 18;
+            this.lbPrimary.Location = new System.Drawing.Point(291, 56);
             this.lbPrimary.Name = "lbPrimary";
             this.lbPrimary.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lbPrimary.Size = new System.Drawing.Size(218, 355);
+            this.lbPrimary.Size = new System.Drawing.Size(218, 328);
             this.lbPrimary.TabIndex = 2;
             // 
             // lbLeft
             // 
+            this.lbLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLeft.FormattingEnabled = true;
+            this.lbLeft.ItemHeight = 18;
             this.lbLeft.Location = new System.Drawing.Point(12, 38);
             this.lbLeft.Name = "lbLeft";
-            this.lbLeft.Size = new System.Drawing.Size(218, 355);
+            this.lbLeft.Size = new System.Drawing.Size(218, 346);
             this.lbLeft.TabIndex = 3;
             // 
             // lbRight
             // 
+            this.lbRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRight.FormattingEnabled = true;
+            this.lbRight.ItemHeight = 18;
             this.lbRight.Location = new System.Drawing.Point(570, 38);
             this.lbRight.Name = "lbRight";
-            this.lbRight.Size = new System.Drawing.Size(218, 355);
+            this.lbRight.Size = new System.Drawing.Size(218, 346);
             this.lbRight.TabIndex = 4;
             // 
             // btnMoveLeft
@@ -107,7 +114,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 414);
+            this.label1.Location = new System.Drawing.Point(9, 404);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 7;
@@ -116,7 +123,7 @@
             // tbPogodeniLeft
             // 
             this.tbPogodeniLeft.Enabled = false;
-            this.tbPogodeniLeft.Location = new System.Drawing.Point(81, 411);
+            this.tbPogodeniLeft.Location = new System.Drawing.Point(12, 423);
             this.tbPogodeniLeft.Name = "tbPogodeniLeft";
             this.tbPogodeniLeft.ReadOnly = true;
             this.tbPogodeniLeft.Size = new System.Drawing.Size(84, 20);
@@ -135,7 +142,7 @@
             // tbPogodeniRight
             // 
             this.tbPogodeniRight.Enabled = false;
-            this.tbPogodeniRight.Location = new System.Drawing.Point(705, 415);
+            this.tbPogodeniRight.Location = new System.Drawing.Point(704, 423);
             this.tbPogodeniRight.Name = "tbPogodeniRight";
             this.tbPogodeniRight.ReadOnly = true;
             this.tbPogodeniRight.Size = new System.Drawing.Size(84, 20);
@@ -144,11 +151,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(636, 418);
+            this.label2.Location = new System.Drawing.Point(729, 404);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Погодени: ";
+            this.label2.Text = "Погодени:";
             // 
             // timer1
             // 
@@ -158,27 +165,30 @@
             // lblLeft
             // 
             this.lblLeft.AutoSize = true;
-            this.lblLeft.Location = new System.Drawing.Point(12, 13);
+            this.lblLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLeft.Location = new System.Drawing.Point(8, 6);
             this.lblLeft.Name = "lblLeft";
-            this.lblLeft.Size = new System.Drawing.Size(35, 13);
+            this.lblLeft.Size = new System.Drawing.Size(60, 24);
             this.lblLeft.TabIndex = 14;
             this.lblLeft.Text = "label3";
             // 
             // lblRight
             // 
             this.lblRight.AutoSize = true;
-            this.lblRight.Location = new System.Drawing.Point(567, 13);
+            this.lblRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRight.Location = new System.Drawing.Point(566, 6);
             this.lblRight.Name = "lblRight";
-            this.lblRight.Size = new System.Drawing.Size(35, 13);
+            this.lblRight.Size = new System.Drawing.Size(60, 24);
             this.lblRight.TabIndex = 15;
             this.lblRight.Text = "label4";
             // 
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
-            this.lblTimer.Location = new System.Drawing.Point(375, 13);
+            this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimer.Location = new System.Drawing.Point(422, 15);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(34, 13);
+            this.lblTimer.Size = new System.Drawing.Size(71, 29);
             this.lblTimer.TabIndex = 16;
             this.lblTimer.Text = "00:00";
             // 
@@ -195,7 +205,7 @@
             this.btnMoveBackRight.Name = "btnMoveBackRight";
             this.btnMoveBackRight.Size = new System.Drawing.Size(40, 30);
             this.btnMoveBackRight.TabIndex = 18;
-            this.btnMoveBackRight.Text = ">>";
+            this.btnMoveBackRight.Text = ">";
             this.btnMoveBackRight.UseVisualStyleBackColor = true;
             this.btnMoveBackRight.Click += new System.EventHandler(this.btnMoveBackRight_Click);
             // 
@@ -205,15 +215,27 @@
             this.btnMoveBackLeft.Name = "btnMoveBackLeft";
             this.btnMoveBackLeft.Size = new System.Drawing.Size(40, 30);
             this.btnMoveBackLeft.TabIndex = 19;
-            this.btnMoveBackLeft.Text = "<<";
+            this.btnMoveBackLeft.Text = "<";
             this.btnMoveBackLeft.UseVisualStyleBackColor = true;
             this.btnMoveBackLeft.Click += new System.EventHandler(this.btnMoveBackLeft_Click);
+            // 
+            // btnNewGame
+            // 
+            this.btnNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewGame.Location = new System.Drawing.Point(305, 15);
+            this.btnNewGame.Name = "btnNewGame";
+            this.btnNewGame.Size = new System.Drawing.Size(111, 29);
+            this.btnNewGame.TabIndex = 20;
+            this.btnNewGame.Text = "Нова игра";
+            this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // Prostorna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 493);
+            this.ClientSize = new System.Drawing.Size(800, 496);
+            this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.btnMoveBackLeft);
             this.Controls.Add(this.btnMoveBackRight);
             this.Controls.Add(this.pbPogodeni);
@@ -232,7 +254,7 @@
             this.Controls.Add(this.lbPrimary);
             this.Controls.Add(this.btnMoveRight);
             this.Name = "Prostorna";
-            this.Text = "Prostorna";
+            this.Text = "Просторна ориентација";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +280,6 @@
         private System.Windows.Forms.ProgressBar pbPogodeni;
         private System.Windows.Forms.Button btnMoveBackRight;
         private System.Windows.Forms.Button btnMoveBackLeft;
+        private System.Windows.Forms.Button btnNewGame;
     }
 }
