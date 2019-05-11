@@ -38,7 +38,7 @@
             this.Name = "Ulica";
             this.Text = "Ulica";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Ulica_Paint);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Ulica_KeyUp);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ulica_KeyDown);
             this.ResumeLayout(false);
 
         }
