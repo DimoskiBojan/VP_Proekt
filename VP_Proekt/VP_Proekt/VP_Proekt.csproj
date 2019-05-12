@@ -59,6 +59,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obleka.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Car.cs" />
@@ -74,6 +75,12 @@
     </Compile>
     <Compile Include="Ulica.Designer.cs">
       <DependentUpon>Ulica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vremenska.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vremenska.Designer.cs">
+      <DependentUpon>Vremenska.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DodadiStavka.resx">
       <DependentUpon>DodadiStavka.cs</DependentUpon>
@@ -96,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ulica.resx">
       <DependentUpon>Ulica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vremenska.resx">
+      <DependentUpon>Vremenska.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,6 +146,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\car3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\masko_bluza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\masko_dzemper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\masko_pantaloni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\masko_patiki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uni_cizmi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uni_dukser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uni_shorcevi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vremenska_covece_masko.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vremenska_covece_zensko.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zensko_bluza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zensko_pantaloni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zensko_patiki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zensko_suknja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\summer_test.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

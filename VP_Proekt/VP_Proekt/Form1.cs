@@ -33,8 +33,6 @@ namespace VP_Proekt
                     this.Show();
                 }
             }
-            
-            
         }
 
         private void btnProstorna_Click(object sender, EventArgs e)
@@ -47,6 +45,23 @@ namespace VP_Proekt
                 this.Hide();
                 Prostorna prostorna = new Prostorna();
                 DialogResult result = prostorna.ShowDialog();
+                if (result == DialogResult.Cancel)
+                {
+                    this.Show();
+                }
+            }
+        }
+
+        private void btnVremenska_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Избери карактер и облечи го според зададената временската сезона",
+                                     "Почни нова игра",
+                                     MessageBoxButtons.OKCancel);
+            if (confirmResult == DialogResult.OK)
+            {
+                this.Hide();
+                Vremenska vremenska = new Vremenska();
+                DialogResult result = vremenska.ShowDialog();
                 if (result == DialogResult.Cancel)
                 {
                     this.Show();

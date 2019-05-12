@@ -93,6 +93,46 @@ namespace VP_Proekt.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap masko_bluza {
+            get {
+                object obj = ResourceManager.GetObject("masko_bluza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap masko_dzemper {
+            get {
+                object obj = ResourceManager.GetObject("masko_dzemper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap masko_pantaloni {
+            get {
+                object obj = ResourceManager.GetObject("masko_pantaloni", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap masko_patiki {
+            get {
+                object obj = ResourceManager.GetObject("masko_patiki", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Person1_Left {
             get {
                 object obj = ResourceManager.GetObject("Person1_Left", resourceCulture);
@@ -146,6 +186,106 @@ namespace VP_Proekt.Properties {
         internal static System.Drawing.Bitmap street {
             get {
                 object obj = ResourceManager.GetObject("street", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap summer_test {
+            get {
+                object obj = ResourceManager.GetObject("summer_test", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uni_cizmi {
+            get {
+                object obj = ResourceManager.GetObject("uni_cizmi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uni_dukser {
+            get {
+                object obj = ResourceManager.GetObject("uni_dukser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uni_shorcevi {
+            get {
+                object obj = ResourceManager.GetObject("uni_shorcevi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vremenska_covece_masko {
+            get {
+                object obj = ResourceManager.GetObject("vremenska_covece_masko", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vremenska_covece_zensko {
+            get {
+                object obj = ResourceManager.GetObject("vremenska_covece_zensko", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zensko_bluza {
+            get {
+                object obj = ResourceManager.GetObject("zensko_bluza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zensko_pantaloni {
+            get {
+                object obj = ResourceManager.GetObject("zensko_pantaloni", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zensko_patiki {
+            get {
+                object obj = ResourceManager.GetObject("zensko_patiki", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zensko_suknja {
+            get {
+                object obj = ResourceManager.GetObject("zensko_suknja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
