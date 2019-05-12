@@ -38,26 +38,29 @@ namespace VP_Proekt.Properties
             }
             else
             {
-                X += 1;
+                if (!lightColor)
+                {
+                    X += 1;
+                }
             }
         }
 
-        public double Stop()
-        {
-            //distance = speed x time promeni go vremeto
-            double distance = X + 1;
-            double startOfZebra = formWidth - 90 - 2 * Resources.Person1_Left.Width - 20;
-            double endOfZebra = formWidth - 90 - 20;
+        //public double Stop()
+        //{
+        //    //distance = speed x time promeni go vremeto
+        //    double distance = X + 1;
+        //    double startOfZebra = formWidth - 90 - 2 * Resources.Person1_Left.Width - 20;
+        //    double endOfZebra = formWidth - 90 - 20;
 
-            if (distance >= startOfZebra && distance <= endOfZebra)
-            {
-                double time = ((startOfZebra) - X);
-                return time;
+        //    if (distance >= startOfZebra && distance <= endOfZebra)
+        //    {
+        //        double time = ((startOfZebra) - X);
+        //        return time;
 
-            }
+        //    }
 
-            return 0;
-        }
+        //    return 0;
+        //}
 
         public void Draw(Graphics g)
         {
