@@ -204,5 +204,26 @@
   <ItemGroup>
     <None Include="Resources\summer_test.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banana.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brokula.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jabolko.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\krastavica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marula.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zelka.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jagoda.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

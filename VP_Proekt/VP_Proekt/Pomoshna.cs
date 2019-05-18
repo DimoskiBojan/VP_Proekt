@@ -22,7 +22,11 @@ namespace VP_Proekt
         public Pomoshna()
         {
             InitializeComponent();
-           
+            smiley = null;
+            text1 = null;
+            text2 = null;
+            text3 = null;
+            
         }
 
         private void Win_Paint(object sender, PaintEventArgs e)
@@ -67,6 +71,7 @@ namespace VP_Proekt
                 point.X = Width / 2  - buttonDa.Width/2;
                 point.Y = smiley.Height + 10 + labelBravo.Height + 10 + labelUspeshno.Height + 10 + labelObidPovtorno.Height + 10;
                 buttonDa.Location = point;
+                buttonNe.Hide();
 
             }
 

@@ -51,11 +51,11 @@
             // 
             this.labelBravo.AutoSize = true;
             this.labelBravo.BackColor = System.Drawing.Color.White;
-            this.labelBravo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBravo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBravo.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.labelBravo.Location = new System.Drawing.Point(670, 396);
             this.labelBravo.Name = "labelBravo";
-            this.labelBravo.Size = new System.Drawing.Size(73, 25);
+            this.labelBravo.Size = new System.Drawing.Size(63, 24);
             this.labelBravo.TabIndex = 1;
             this.labelBravo.Text = "Bravo";
             // 

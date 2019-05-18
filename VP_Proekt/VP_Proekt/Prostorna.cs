@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VP_Proekt.Properties;
 
 namespace VP_Proekt
 {
@@ -19,6 +20,7 @@ namespace VP_Proekt
         int pogodeniLevo;
         int pogodeniDesno;
         int noStavki;
+        Pomoshna pomoshna;
 
         public Prostorna()
         {
@@ -26,13 +28,13 @@ namespace VP_Proekt
             //Initialize a couple of stavki for start
             stavki = new List<Stavka>()
             {
-                new Stavka("Јагода", "Овошје"),
-                new Stavka("Банана", "Овошје"),
-                new Stavka("Јаболко", "Овошје"),
-                new Stavka("Марула", "Зеленчук"),
-                new Stavka("Зелка", "Зеленчук"),
-                new Stavka("Краставица", "Зеленчук"),
-                new Stavka("Брокула", "Зеленчук")
+                new Stavka("Јагода", "Овошје",Resources.jagoda, "Јагодата припаѓа во категоријата овошја.\n Таа има црвена боја со благ вкус."),
+                new Stavka("Краставица", "Зеленчук", Resources.krastavica, "Краставицата припаѓа во категоријата зеленчуци. \n Таа се состои 95% од вода"),
+                new Stavka("Јаболко", "Овошје", Resources.jabolko, "Јаболкото припаѓа во категоријата овошја,\n може да има црвена, жолта и зелена боја."),
+                new Stavka("Марула", "Зеленчук", Resources.marula, "Марулата припаѓа во категоријата зеленчуци. \n Таа е лиснат зеленчук"),
+                new Stavka("Зелка", "Зеленчук", Resources.zelka,"Зелката припаѓа во категоријата зеленчуци. \n Таа има зелена боја и од неа се прави салата"),
+                new Stavka("Банана", "Овошје", Resources.banana,"Бананата припаѓа во категоријата овошја.\n Таа има жолта боја со благ вкус."),
+                new Stavka("Брокула", "Зеленчук", Resources.brokula, "Брокулата припаѓа во категоријата зеленчуци \n и ги содржи витамините А, Ц и Е.")
             };
             //Initialize categories
             kategorii = new string[] { "Зеленчук", "Овошје" };
@@ -71,13 +73,24 @@ namespace VP_Proekt
             int sec = timeElapsed % 60;
             lblTimer.Text = String.Format("{0:00}:{1:00}", min, sec);
             pbPogodeni.Value = Convert.ToInt32(tbPogodeniLeft.Text) + Convert.ToInt32(tbPogodeniRight.Text);
-            //If all items in correct lists stop the timer and start a new game (confirmation dialog)
+            //If all items in correct lists stop the timer and start a new game with Pomoshna form
             if(pbPogodeni.Value == pbPogodeni.Maximum)
             {
                 timer1.Stop();
-                if (MessageBox.Show("Нова игра?", String.Format("Ја завршивте играта за {0:00}:{1:00}", min, sec), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                pomoshna = new Pomoshna();
+                pomoshna.smiley = Resources.smiley;
+                pomoshna.text1 = "Браво !!!";
+                pomoshna.text2 = string.Format("Ја завршивте играта за {0:00} минути и {1:00} секунди", min, sec);
+                pomoshna.text3 = "Дали сакате нова игра?";
+                pomoshna.buttonYes = "Да";
+                pomoshna.buttonNo = "Не";
+                if (pomoshna.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     newGame();
+                }
+                else
+                {
+                    this.Close();
                 }
             }
         }
@@ -125,6 +138,16 @@ namespace VP_Proekt
                 foreach (var item in source.SelectedItems)
                 {
                     destination.Items.Add(item);
+                    Stavka s = item as Stavka;
+                    //Check if the category of the items do not corresponds to the category of the listBox we want to place it 
+                    if ((s.Category== "Овошје" && destination == lbRight) || (s.Category == "Зеленчук" && destination == lbLeft))
+                    {
+                        pomoshna = new Pomoshna();
+                        pomoshna.smiley = s.image;
+                        pomoshna.text2 = s.description;
+                        pomoshna.buttonYes = "Во ред";
+                        pomoshna.Show();
+                    }
                 }
                 //Remove the selected items from the source list, while there are selected items
                 //Must do this, because they will remain in the source list too

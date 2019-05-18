@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,11 +30,20 @@ namespace VP_Proekt
         //If validation succeeds, make new Stavka with entered info, close the form with OK result
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string image;
             Stavka = new Stavka();
             Stavka.Name = tbName.Text;
             Stavka.Category = cbCategory.Text;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            Stavka.description = textBoxOpis.Text;
+            if(tbName.Text.Trim().Length != 0 && textBoxOpis.Text.Trim().Length != 0 && cbCategory.SelectedIndex != -1)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Мора да се внесат сите податоци");
+            }
         }
 
         //Validating the name, can't be empty
@@ -64,6 +74,43 @@ namespace VP_Proekt
                 errorProvider1.SetError(cbCategory, null);
                 e.Cancel = false;
             }
+        }
+
+        private void textBoxOpis_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxOpis.Text.Trim().Length == 0)
+            {
+                errorProvider1.SetError(textBoxOpis, "Описот е задолжително");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBoxOpis, null);
+                e.Cancel = false;
+            }
+
+        }
+
+        private void buttonDodadiSlika_Click(object sender, EventArgs e)
+        {
+            string imageLocation = "";
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "jpg files(*.jpg)|*.jpg|png files(*.png)|*.png";
+
+                if(dialog.ShowDialog()==DialogResult.OK)
+                {
+                    imageLocation = dialog.FileName;
+                    pictureBox.ImageLocation = imageLocation;
+
+
+
+                }
+            }
+            catch (Exception) {
+            }
+
         }
     }
 }
