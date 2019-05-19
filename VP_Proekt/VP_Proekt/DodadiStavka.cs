@@ -14,10 +14,12 @@ namespace VP_Proekt
     public partial class DodadiStavka : Form
     {
         public Stavka Stavka { get; set; }
+        string imageLocation { get; set; }
 
         public DodadiStavka()
         {
             InitializeComponent();
+            imageLocation = "";
         }
 
         //If canceled, close the form with Cancel result
@@ -30,13 +32,14 @@ namespace VP_Proekt
         //If validation succeeds, make new Stavka with entered info, close the form with OK result
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string image;
-            Stavka = new Stavka();
-            Stavka.Name = tbName.Text;
-            Stavka.Category = cbCategory.Text;
-            Stavka.description = textBoxOpis.Text;
-            if(tbName.Text.Trim().Length != 0 && textBoxOpis.Text.Trim().Length != 0 && cbCategory.SelectedIndex != -1)
+            
+            if(tbName.Text.Trim().Length != 0 && textBoxOpis.Text.Trim().Length != 0 && cbCategory.SelectedIndex != -1 && imageLocation != "")
             {
+                Stavka = new Stavka();
+                Stavka.Name = tbName.Text;
+                Stavka.Category = cbCategory.Text;
+                Stavka.description = textBoxOpis.Text;
+                Stavka.image = pictureBox.Image;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -93,7 +96,7 @@ namespace VP_Proekt
 
         private void buttonDodadiSlika_Click(object sender, EventArgs e)
         {
-            string imageLocation = "";
+            
             try
             {
                 OpenFileDialog dialog = new OpenFileDialog();
@@ -103,14 +106,13 @@ namespace VP_Proekt
                 {
                     imageLocation = dialog.FileName;
                     pictureBox.ImageLocation = imageLocation;
-
-
-
                 }
             }
             catch (Exception) {
             }
 
         }
+  
+        
     }
 }

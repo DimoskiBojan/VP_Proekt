@@ -13,19 +13,19 @@ namespace VP_Proekt
 {
     public partial class Vremenska : Form
     {
-        Image character;
-        List<Obleka> alista;
+        public Image character { get; set; }
+        public Image background {get; set;}
+        public List<Obleka> alista;
         bool mouseDown;
         Obleka selectedObleka;
         float previousX;
         float previousY;
         const int WIDTH_HEIGHT_OBLEKA = 220;
-
+        
         public Vremenska()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-            character = Resources.vremenska_covece_masko;
             this.ClientSize = new Size(1280, 720);
             alista = new List<Obleka>
             {
@@ -37,13 +37,15 @@ namespace VP_Proekt
                 new Obleka(WIDTH_HEIGHT_OBLEKA+40,WIDTH_HEIGHT_OBLEKA+30, Resources.uni_dukser, Obleka.SEZONA.ZIMA),
                 new Obleka(WIDTH_HEIGHT_OBLEKA*2+60,WIDTH_HEIGHT_OBLEKA+30, Resources.uni_cizmi, Obleka.SEZONA.ZIMA),
             };
-            this.BackgroundImage = Resources.summer_test;
+
         }
 
         private void Vremenska_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            
+            Image image = new Bitmap(background);
+            BackgroundImage = image;
+   
             Pen pn = new Pen(Color.Black, 4);
             SolidBrush sb = new SolidBrush(Color.FromArgb(50, 0, 0, 0));
 
@@ -93,8 +95,10 @@ namespace VP_Proekt
 
         private void Vremenska_MouseUp(object sender, MouseEventArgs e)
         {
+          
             mouseDown = false;
             Cursor = Cursors.Default;
+
         }
 
         private Obleka SelectObleka(float x, float y)

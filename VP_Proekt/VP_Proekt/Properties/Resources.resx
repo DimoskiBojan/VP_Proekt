@@ -214,4 +214,7 @@
   <data name="zelka" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zelka.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="winter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\winter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

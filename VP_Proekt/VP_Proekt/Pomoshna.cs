@@ -28,12 +28,24 @@ namespace VP_Proekt
             text3 = null;
             
         }
+        private void WidthForm()
+        {
+            int i = Math.Max(smiley.Width, labelBravo.Width);
+            if(Math.Max(labelObidPovtorno.Width, labelUspeshno.Width) > i)
+            {
+                i = Math.Max(labelObidPovtorno.Width, labelUspeshno.Width);
+            }
+            Width =i+ 20;
+
+       
+
+        }
 
         private void Win_Paint(object sender, PaintEventArgs e)
         {
-            Width = smiley.Width + 10 + 20;
+            
             Height = smiley.Height + 40 + labelUspeshno.Height + 10 + labelObidPovtorno.Height + 10 + labelBravo.Height + 20 + buttonDa.Height;
-
+            WidthForm();
             Graphics g = e.Graphics;
             g.Clear(Color.White);
             g.DrawImage(smiley, 10, 10, smiley.Width, smiley.Height);

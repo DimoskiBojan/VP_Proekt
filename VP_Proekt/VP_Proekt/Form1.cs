@@ -60,9 +60,9 @@ namespace VP_Proekt
             if (confirmResult == DialogResult.OK)
             {
                 this.Hide();
-                Vremenska vremenska = new Vremenska();
-                DialogResult result = vremenska.ShowDialog();
-                if (result == DialogResult.Cancel)
+                VremenskaIzbor vremenskaIzbor = new VremenskaIzbor();
+                DialogResult result = vremenskaIzbor.ShowDialog();
+                if (result == DialogResult.Cancel || result == DialogResult.OK)
                 {
                     this.Show();
                 }
