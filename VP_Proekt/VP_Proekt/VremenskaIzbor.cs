@@ -19,7 +19,6 @@ namespace VP_Proekt
         Image leto { get; set; }
         int SelectedMashkoZensko { get; set; }
         int SelectedZimaLeto { get; set; }
-        public Vremenska vremenska { get; set; }
         Point click { get; set; }
 
         public VremenskaIzbor()
@@ -30,7 +29,6 @@ namespace VP_Proekt
             covece_zensko = Resources.vremenska_covece_zensko;
             zima = Resources.summer_test;
             leto = Resources.winter;
-            vremenska = new Vremenska();
             SelectedMashkoZensko = 3;
             SelectedZimaLeto = 3;
 
@@ -134,7 +132,11 @@ namespace VP_Proekt
 
         private void button1_Click(object sender, EventArgs e)
         {
-            vremenska = new Vremenska();
+            Image background=null;
+            Image character=null;
+            bool mashko=true;
+            bool Zima= true;
+            
             if(SelectedMashkoZensko==3 || SelectedZimaLeto==3)
             {
                 MessageBox.Show("Мора да избереш карактер и сезона");
@@ -142,31 +144,33 @@ namespace VP_Proekt
             }
             if(SelectedZimaLeto==0)
             {
-                vremenska.background = zima;
+                background = zima;
+                
             }
             if(SelectedZimaLeto==1)
             {
-                vremenska.background = leto;
+               background = leto;
+                Zima = false;
             }
             if(SelectedMashkoZensko==0)
             {
-                vremenska.character = covece_mashko;
+                character = covece_mashko;
             }
             if(SelectedMashkoZensko==1)
             {
-                vremenska.character = covece_zensko;
+                character = covece_zensko;
+                mashko = false;
             }
             this.Hide();
+            Vremenska vremenska= new Vremenska(Zima, mashko, background, character);
             if (vremenska.ShowDialog() == DialogResult.Cancel)
             {
-                DialogResult = DialogResult.Cancel;
-                this.Close();
+                this.Show();
 
             }
             else
             {
-                DialogResult = DialogResult.OK;
-                this.Close();
+                this.Show();
             }
 
 

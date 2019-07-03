@@ -14,29 +14,24 @@ namespace VP_Proekt
     public partial class Vremenska : Form
     {
         public Image character { get; set; }
-        public Image background {get; set;}
-        public List<Obleka> alista;
+        public Image background { get; set; }
         bool mouseDown;
-        Obleka selectedObleka;
+        public KlasaZaObleki Obleki { get; set; }
         float previousX;
         float previousY;
-        const int WIDTH_HEIGHT_OBLEKA = 220;
         
-        public Vremenska()
+        public Vremenska(bool zima, bool mashko, Image background, Image character)
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             this.ClientSize = new Size(1280, 720);
-            alista = new List<Obleka>
-            {
-                new Obleka(20, 10, Resources.masko_bluza, Obleka.SEZONA.LETO),
-                new Obleka(20,WIDTH_HEIGHT_OBLEKA+30, Resources.masko_dzemper, Obleka.SEZONA.ZIMA),
-                new Obleka(WIDTH_HEIGHT_OBLEKA+40,10, Resources.masko_pantaloni, Obleka.SEZONA.ZIMA),
-                new Obleka(WIDTH_HEIGHT_OBLEKA*2+60,10, Resources.masko_patiki, Obleka.SEZONA.LETO),
-                new Obleka(20, WIDTH_HEIGHT_OBLEKA*2+50, Resources.uni_shorcevi, Obleka.SEZONA.LETO),
-                new Obleka(WIDTH_HEIGHT_OBLEKA+40,WIDTH_HEIGHT_OBLEKA+30, Resources.uni_dukser, Obleka.SEZONA.ZIMA),
-                new Obleka(WIDTH_HEIGHT_OBLEKA*2+60,WIDTH_HEIGHT_OBLEKA+30, Resources.uni_cizmi, Obleka.SEZONA.ZIMA),
-            };
+            this.character = character;
+            this.background = background;
+            //checks if the character is a boy
+            Obleki = new KlasaZaObleki(mashko);
+            Obleki.sezona = (zima ? Obleka.SEZONA.LETO : Obleka.SEZONA.ZIMA);
+            
+            
 
         }
 
@@ -45,33 +40,18 @@ namespace VP_Proekt
             Graphics g = e.Graphics;
             Image image = new Bitmap(background);
             BackgroundImage = image;
-   
-            Pen pn = new Pen(Color.Black, 4);
-            SolidBrush sb = new SolidBrush(Color.FromArgb(50, 0, 0, 0));
-
-            foreach (Obleka o in alista)
-            {
-                g.DrawRectangle(pn, o.startX, o.startY, WIDTH_HEIGHT_OBLEKA, WIDTH_HEIGHT_OBLEKA);
-                g.FillRectangle(sb, o.startX, o.startY, WIDTH_HEIGHT_OBLEKA, WIDTH_HEIGHT_OBLEKA);
-            }
-
+            // Drawing rectagles for Obleka
+            Obleki.DrawRectagles(g);
+            // Drawing the character
             g.DrawImage(character, Width - character.Width - 50, Height - character.Height - 60, character.Width, character.Height);
-
-            foreach (Obleka o in alista)
-            {
-                o.Draw(g);
-            }
-            if (selectedObleka != null)
-            {
-                selectedObleka.Draw(g);
-            }
-            
+            //Draw Obleka
+            Obleki.Draw(g);
         }
 
         private void Vremenska_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
-            selectedObleka = SelectObleka(e.X, e.Y);
+            Obleki.SelectObleka(e.X, e.Y);
             previousX = e.X;
             previousY = e.Y;
         }
@@ -80,11 +60,11 @@ namespace VP_Proekt
         {
             if (mouseDown)
             {
-                if (selectedObleka != null)
+                if (Obleki.selectedObleka != null)
                 {
                     float dx = e.X - previousX;
                     float dy = e.Y - previousY;
-                    selectedObleka.Move(dx, dy);
+                    Obleki.Move(dx, dy);
                     Cursor = Cursors.Hand;
                     Invalidate();
                 }
@@ -95,23 +75,30 @@ namespace VP_Proekt
 
         private void Vremenska_MouseUp(object sender, MouseEventArgs e)
         {
-          
             mouseDown = false;
             Cursor = Cursors.Default;
-
-        }
-
-        private Obleka SelectObleka(float x, float y)
-        {
-            foreach(Obleka o in alista)
+            Obleki.Pogodok(character.Width, character.Height, this.Width, this.Height);
+            if(Obleki.ProveriDaliPobedil())
             {
-                if(o.isOver(x, y))
+                Pomoshna pomoshna = new Pomoshna();
+                pomoshna.smiley = Resources.smiley;
+                pomoshna.text1 = "Браво !!!";
+                pomoshna.text2 = "Ја завршивте играта";
+                pomoshna.text3 = "Дали сакате нова игра?";
+                pomoshna.buttonYes = "Да";
+                pomoshna.buttonNo = "Не";
+                if (pomoshna.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    return o;
+                    VremenskaIzbor vremenskaIzbor = new VremenskaIzbor();
+                    this.Close();
                 }
-                
+                else
+                {
+                    this.Close();
+                }
             }
-            return null;
         }
+
+   
     }
 }
