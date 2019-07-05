@@ -1,15 +1,15 @@
 # Игра за деца со посебни потреби
 
-### 1. Вовед 
+## 1. Вовед 
 
 Играта е поделена на три категории [Премини улица](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Ulica.cs) , [Временска ориентација](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Vremenska.cs) и [Просторна ориентација](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Prostorna.cs). Сите три категории се визуелизирани со слики и видливи награди(поени, progress bar, smiley emoji's). Визуелизацијата им помога на децата со посебни потреби да научат која е правилната одлука што треба да ја донесат, која што претставува целта на оваа игра. Целта е да научат правилно да преминат улица, да имаат ориентација за лево и десно, а воедно да ги научат овошјата и зеленчуците и да научат која облека се носи во временските сезони Зима и Лето. 
 
   
   ---
 
-### 2. Упатсво за играње
+## 2. Упатсво за играње
 
-#### 2.1 Премини улица
+### 2.1 Премини улица
 
 ![picture alt](https://github.com/DimoskiBojan/VP_Proekt/blob/master/Sliki/ulica.PNG) 
 
@@ -81,7 +81,7 @@ if (direction == DIRECTION.LEFT)
 ```
 
 
-#### 2.2 Временска ориентација
+### 2.2 Временска ориентација
 Во овој дел од играта првично треба да се избере сликичка за со кој карактер би сакале да играат и во која временска сезона.
 
 ![picture alt](https://github.com/DimoskiBojan/VP_Proekt/blob/master/Sliki/VremenskaIzbor.PNG)
@@ -99,7 +99,7 @@ if (direction == DIRECTION.LEFT)
   * [Obleka](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Obleka.cs)
   * [KlasaZaObleki](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/KlasaZaObleki.cs)
 
-#### 2.3 Просторна ориентација
+### 2.3 Просторна ориентација
 
 Тука е потребно да се стават Овошјата и Зеленчуците во соодветниот listBox. Наградата има за секој погодок и тоа се: поен плус во делот за Погодени, Исполнување на ProgressBar и Smily Emoji ,претставено со помош на [Pomoshna](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Pomoshna.cs), доколку победи.
 
