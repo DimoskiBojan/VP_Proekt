@@ -133,6 +133,7 @@
             this.pictureBox.Size = new System.Drawing.Size(204, 134);
             this.pictureBox.TabIndex = 15;
             this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // buttonDodadiSlika
             // 

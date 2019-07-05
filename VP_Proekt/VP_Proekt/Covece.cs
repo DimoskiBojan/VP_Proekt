@@ -31,7 +31,7 @@ namespace VP_Proekt
 
         public Covece()
         {
-            
+            lightColor = true;
             person = Resources.Person1_Up;
             //Random X value for the person
             Random random = new Random();
@@ -48,13 +48,30 @@ namespace VP_Proekt
             //semaphore Width=90
             int startOfZebra = formWidth - 90 - 2 * person.Width - 20;
             int endOfZebra = startOfZebra + 2 * person.Width;
-
             if(X>=startOfZebra-10 && X+person.Width<=endOfZebra+10)
             {
                 return true;
             }
-
             return false;
+        }
+        //Checks if the location of person is in on the Zebra and the light is red
+        public void NaZebraICrvenoSvetlo()
+        {
+            //the end point
+            int pocetokulica = Resources.sidewalk_Up.Height-20;
+            int krajulica = pocetokulica + Resources.street.Height;
+            if (!lightColor && Y>pocetokulica && Y<krajulica)
+            {
+                pomoshna = new Pomoshna();
+                pomoshna.text1 = "На добар пат си да ја поминеш улицата";
+                pomoshna.text2 = "Тргна на зелено, но ти се уклучи црвено ";
+                pomoshna.text3 = "Обиди се повторно";
+                pomoshna.buttonYes = "Во ред";
+                pomoshna.buttonNo = null;
+                pomoshna.smiley = Resources.smiley;
+                pomoshna.Show();
+                Y = 300;
+            }
         }
         public void ChangeDirection(DIRECTION d)
         {
@@ -85,28 +102,14 @@ namespace VP_Proekt
                 }
                 else
                 {
-                    //If the person goes UP and he is in between the Zebra but the trafic light is green
-                    if (!lightColor && X<=formHeight/2)
-                    {
-                        pomoshna = new Pomoshna();
-                        pomoshna.text1 = "На добар пат си да ја поминеш улицата";
-                        pomoshna.text2 = "Тргна на зелено, но ти се уклучи црвено";
-                        pomoshna.text3 = "Не се враќај продолжи до одиш";
-                        pomoshna.buttonYes = "Продилжи со играта";
-                        pomoshna.buttonNo = null;
-                        pomoshna.smiley = Resources.smiley;
-                        pomoshna.Show();
-                        Y -= 10;
-                    }
+                    
                     //If the person goes UP and he is in between the Zebra but the trafic light is red 
                     if (!lightColor && X > formHeight / 2)
                     {
                         Y = 300;
                         pomoshna = new Pomoshna();
-                        pomoshna.text1 = "Немаш време да ја поминеш улицата";
-                        pomoshna.text2 = "Врати се назад";
-                        pomoshna.text3 =null;
-                        pomoshna.buttonYes = "Продолжи со играта";
+                        pomoshna.text2 = "Улицата се поминува на зелено";
+                        pomoshna.buttonYes = "Во ред";
                         pomoshna.buttonNo = null;
                         pomoshna.smiley = sad_smiley;
                         pomoshna.Show();
@@ -139,9 +142,6 @@ namespace VP_Proekt
                         X += 10;
                     }
                 }
-                
-                
-
             }
             if (direction == DIRECTION.RIGHT)
             {
@@ -166,11 +166,7 @@ namespace VP_Proekt
                         X -= 10;
                     }
                 }
-
-
             }
-           
-
         }
          public void Draw(Graphics g)
         {

@@ -61,7 +61,7 @@ namespace VP_Proekt
             time.Start();
 
             timerSemaphore = new Timer();
-            timerSemaphore.Interval = 5000;
+            timerSemaphore.Interval = 10000;
             timerSemaphore.Tick += new EventHandler(timerSemaphore_Tick);
             timerSemaphore.Start();
 
@@ -75,30 +75,25 @@ namespace VP_Proekt
         {
             time_min += 1;
             labeltime.Text = string.Format("{0:00}", time_min);
+            person.NaZebraICrvenoSvetlo();
         }
 
         void timer_Tick(object sender, EventArgs e)
         {
-            //if (count == 5000)
-            //{
-            //    count = 0;
-            //}
-            //else
-            //{
-            //    count++;
-            //}
-            //foreach (Car c in cars)
-            //{
-            //    double f = c.Stop();
-            //    f = count;
-            //    if ((5000 - count) != c.Stop())
-            //    {
-            //        c.Move();
-            //    }
-            //}
             foreach (Car c in cars)
             {
-                c.Move();
+                bool i = c.PredMene(cars[0].X, cars[0].Y);
+                bool j= c.PredMene(cars[1].X, cars[1].Y);
+                bool k= c.PredMene(cars[2].X, cars[2].Y);
+                if(i || j || k)
+                {
+                    c.kolapredtebe = true;
+                }
+                else
+                {
+                    c.kolapredtebe = false;
+                }
+                c.Move(Width);
             }
 
             Invalidate();
@@ -183,17 +178,18 @@ namespace VP_Proekt
                 //peshacki
                 for (int i = 0; i < 4; i++)
                 {
-                    Rectangle peshacki = new Rectangle(Width - 90 - 2 * person.person.Width - 20, sidewalk_up.Height + 10 + i * 50, 2 * person.person.Width, person.person.Height / 2);
+                    Rectangle peshacki = new Rectangle(Width- 2 * person.person.Width-20-90, sidewalk_up.Height + 10 + i * 50, 2 * person.person.Width, person.person.Height / 2);
                     g.FillRectangle(Brushes.WhiteSmoke, peshacki);
                 }
+               
 
-                //cars
-                foreach (Car c in cars)
+            //cars
+            foreach (Car c in cars)
                 {
                     c.Draw(g);
                 }
                 person.Draw(g);
-                Rectangle r = new Rectangle(Width - sidewalk_down.Width - 20, 10, 70, 130);
+                Rectangle r = new Rectangle(Width - sidewalk_down.Width-20, 10, 70, 130);
                 g.FillRectangle(Brushes.LightGray, r);
                 labeltime.Location = new Point(Width - sidewalk_down.Width , 10+130);
                 Rectangle r1 = new Rectangle(Width - sidewalk_down.Width - 20 + 5, 13, 60, 60);

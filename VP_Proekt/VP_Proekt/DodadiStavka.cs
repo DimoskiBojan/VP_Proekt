@@ -112,7 +112,10 @@ namespace VP_Proekt
             }
 
         }
-  
-        
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
     }
 }

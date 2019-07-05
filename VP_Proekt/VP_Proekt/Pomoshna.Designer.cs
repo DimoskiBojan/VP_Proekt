@@ -39,11 +39,11 @@
             // 
             this.labelUspeshno.AutoSize = true;
             this.labelUspeshno.BackColor = System.Drawing.Color.White;
-            this.labelUspeshno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUspeshno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUspeshno.ForeColor = System.Drawing.Color.Violet;
             this.labelUspeshno.Location = new System.Drawing.Point(410, 346);
             this.labelUspeshno.Name = "labelUspeshno";
-            this.labelUspeshno.Size = new System.Drawing.Size(111, 18);
+            this.labelUspeshno.Size = new System.Drawing.Size(142, 24);
             this.labelUspeshno.TabIndex = 0;
             this.labelUspeshno.Text = "LabelUspeshno";
             // 
@@ -64,30 +64,34 @@
             this.labelObidPovtorno.AllowDrop = true;
             this.labelObidPovtorno.AutoSize = true;
             this.labelObidPovtorno.BackColor = System.Drawing.Color.White;
-            this.labelObidPovtorno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelObidPovtorno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelObidPovtorno.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.labelObidPovtorno.Location = new System.Drawing.Point(485, 296);
             this.labelObidPovtorno.Name = "labelObidPovtorno";
-            this.labelObidPovtorno.Size = new System.Drawing.Size(130, 18);
+            this.labelObidPovtorno.Size = new System.Drawing.Size(166, 24);
             this.labelObidPovtorno.TabIndex = 2;
             this.labelObidPovtorno.Text = "labelObidPovtorno";
             // 
             // buttonDa
             // 
-            this.buttonDa.BackColor = System.Drawing.Color.LightCoral;
+            this.buttonDa.BackColor = System.Drawing.Color.OliveDrab;
+            this.buttonDa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonDa.Location = new System.Drawing.Point(403, 400);
             this.buttonDa.Name = "buttonDa";
-            this.buttonDa.Size = new System.Drawing.Size(75, 23);
+            this.buttonDa.Size = new System.Drawing.Size(86, 38);
             this.buttonDa.TabIndex = 3;
             this.buttonDa.UseVisualStyleBackColor = false;
             this.buttonDa.Click += new System.EventHandler(this.buttonDa_Click);
             // 
             // buttonNe
             // 
-            this.buttonNe.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonNe.BackColor = System.Drawing.Color.OrangeRed;
+            this.buttonNe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonNe.Location = new System.Drawing.Point(533, 402);
             this.buttonNe.Name = "buttonNe";
-            this.buttonNe.Size = new System.Drawing.Size(75, 23);
+            this.buttonNe.Size = new System.Drawing.Size(96, 36);
             this.buttonNe.TabIndex = 4;
             this.buttonNe.UseVisualStyleBackColor = false;
             this.buttonNe.Click += new System.EventHandler(this.buttonNe_Click);
@@ -103,7 +107,6 @@
             this.Controls.Add(this.labelBravo);
             this.Controls.Add(this.labelUspeshno);
             this.Name = "Pomoshna";
-            this.Text = "Win";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Win_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();

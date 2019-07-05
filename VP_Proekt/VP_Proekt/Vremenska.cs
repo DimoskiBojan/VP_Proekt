@@ -89,11 +89,12 @@ namespace VP_Proekt
                 pomoshna.buttonNo = "Не";
                 if (pomoshna.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    VremenskaIzbor vremenskaIzbor = new VremenskaIzbor();
+                    DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
                 {
+                    DialogResult=DialogResult.Cancel;
                     this.Close();
                 }
             }

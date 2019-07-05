@@ -165,7 +165,7 @@ namespace VP_Proekt
             Vremenska vremenska= new Vremenska(Zima, mashko, background, character);
             if (vremenska.ShowDialog() == DialogResult.Cancel)
             {
-                this.Show();
+                this.Close();
 
             }
             else
@@ -174,6 +174,12 @@ namespace VP_Proekt
             }
 
 
+        }
+
+        private void buttonNazad_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
