@@ -2,14 +2,17 @@
 
 ### 1. Вовед 
 
-Играта е поделена на три категории [Премини улица](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Ulica.cs) , [Временска ориентација](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Vremenska.cs) и [Просторна ориентација](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Prostorna.cs). Сите три категории се визуелизирани со слики и видливи награди(поени, progress bar, smiley emoji's). Визуелизацијата им помога на децата со посебни потреби да научат која е правилната одлука што треба да ја донесат, која што и е целта на оваа игра. Целта е да научат правилно да преминат улица, да имаат ориентација за лево и десно а воедно да ги научат овошјата и зеленчуците и да научат која облека се носи во временските сезони Зима и Лето. 
+Играта е поделена на три категории [Премини улица](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Ulica.cs) , [Временска ориентација](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Vremenska.cs) и [Просторна ориентација](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Prostorna.cs). Сите три категории се визуелизирани со слики и видливи награди(поени, progress bar, smiley emoji's). Визуелизацијата им помога на децата со посебни потреби да научат која е правилната одлука што треба да ја донесат, која што претставува целта на оваа игра. Целта е да научат правилно да преминат улица, да имаат ориентација за лево и десно, а воедно да ги научат овошјата и зеленчуците и да научат која облека се носи во временските сезони Зима и Лето. 
 
   
   ---
 
 ### 2. Упатсво за играње
 
-#### ✦ Премини улица
+#### 2.1 Премини улица
+
+![picture alt](https://github.com/DimoskiBojan/VP_Proekt/blob/master/Sliki/ulica.PNG) 
+
 Карактерот кој се наоѓа на тротоарот треба правилно да премине преку улицата преку притискање на копчињата Up, Down, Right и Left од тастатурата. Карактерот е ограничен во неговото движење, тоа значи дека кога ќе направи грешка го известуваме дека направил грешка со помош на формата [Pomoshna](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Pomoshna.cs) и го враќаме на последната валидна состојба. <br />
 
 ##### Ова се некои од ограничувањата кои што ние ги имаме имплементирано во нашиот код во класата [Covece](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Covece.cs):
@@ -28,7 +31,7 @@
             return false;
         }
 ```
-- Карактерот стои на пешачкиот премин додека е црвено или немал доволно време да го помине пешачкиот премин 
+- Карактерот стои на пешачкиот премин додека е црвено или немал доволно време да го помине пешачкиот премин па затоа го враќаме на последната валидна состојба 
 ```csharp
 public void NaZebraICrvenoSvetlo()
         {
@@ -41,7 +44,7 @@ public void NaZebraICrvenoSvetlo()
             }
         }
 ```
-- Карактерот е на пешачки и сака да се двиши лево и десно од пешачкиот
+- Карактерот е на пешачки и сака да се движи лево и десно од пешачкиот
 ```csharp
 if (direction == DIRECTION.LEFT)
             {
@@ -78,10 +81,14 @@ if (direction == DIRECTION.LEFT)
 ```
 
 
-#### ✦ Временска ориентација
+#### 2.2 Временска ориентација
 Во овој дел од играта првично треба да се избере сликичка за со кој карактер би сакале да играат и во која временска сезона.
 
+![picture alt](https://github.com/DimoskiBojan/VP_Proekt/blob/master/Sliki/VremenskaIzbor.PNG)
+
 Откако се избрани карактерот и временската сезона треба да се изберат соодветните алишта за избраната сезона.
+
+![picture alt](https://github.com/DimoskiBojan/VP_Proekt/blob/master/Sliki/VremeskaZimaDevojce.PNG)![picture alt](https://github.com/DimoskiBojan/VP_Proekt/blob/master/Sliki/goalVremenskaDevojce.PNG)
 
 Во овој дел се користат следниве форми и класи:
  1. Форми:
@@ -90,9 +97,14 @@ if (direction == DIRECTION.LEFT)
   * [Pomoshna](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Pomoshna.cs)
 2. Класи:
   * [Obleka](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Obleka.cs)
-  * [KlasaZaObleki] (https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/KlasaZaObleki.cs)
+  * [KlasaZaObleki](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/KlasaZaObleki.cs)
 
-#### ✦ Просторна ориентација
-Тука е потребно да се стават Овошјата и Зеленчуците во соодветниот listBox. Тука наградата за секој погодок е поен плус во делот за Погодени, Исполнување на ProgressBar и Smily Emoji ,претставено со помош на [Pomoshna](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Pomoshna.cs), доколку победи.
+#### 2.3 Просторна ориентација
 
-Во овој дел има опции за додавање и бришење на ставки. Опцијата за додавање ни отвара нова форма во која што имаме имплементирано валидација на Името, валидација на Описот и воедно Внес на слика. 
+Тука е потребно да се стават Овошјата и Зеленчуците во соодветниот listBox. Наградата има за секој погодок и тоа се: поен плус во делот за Погодени, Исполнување на ProgressBar и Smily Emoji ,претставено со помош на [Pomoshna](https://github.com/DimoskiBojan/VP_Proekt/blob/master/VP_Proekt/VP_Proekt/Pomoshna.cs), доколку победи.
+
+![picture alt](https://github.com/DimoskiBojan/VP_Proekt/blob/master/Sliki/Prostorna.PNG)
+
+Во овој дел има опции за додавање и бришење на ставки. Опцијата за додавање ни отвара нова форма во која што имаме имплементирано валидација на Името, валидација на Описот и воедно внес на слика. 
+
+![picture alt](https://github.com/DimoskiBojan/VP_Proekt/blob/master/Sliki/DodadiStavka.PNG)
